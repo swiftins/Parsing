@@ -39,7 +39,8 @@ def dejstvie(file_pdf, programma_obrabotki, method_obrabotki):
                         with open(image_filename, "wb") as f:
                             f.write(image_bytes)
             else:
-
+                start_page = int(input('start_page = '))
+                end_page = int(input('end_page = '))
                 doc = pdf 
                 output_pdf = 'pdf_urez.pdf'
 
@@ -53,7 +54,7 @@ def dejstvie(file_pdf, programma_obrabotki, method_obrabotki):
                 # Сохраняем новый PDF
                 new_doc.save(output_pdf)
                 new_doc.close()
-                doc.close()
+   #             doc.close()
 
                 print(f"Страницы с {start_page} по {end_page} сохранены в {output_pdf}.")
 
@@ -100,5 +101,5 @@ def save_result(filename, content, is_pdf=False):
 # Пример вызова
 file_pdf = "ASME Sec II-D-Metric.pdf"
 programma_obrabotki = 2  # PyMuPDF (fitz)
-method_obrabotki = 1  # Извлечь текст
+method_obrabotki = 4  # Извлечь текст
 dejstvie(file_pdf, programma_obrabotki, method_obrabotki)
