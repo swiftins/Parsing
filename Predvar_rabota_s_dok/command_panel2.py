@@ -17,6 +17,11 @@ def Pusk():
     # Выводим информацию о файле и методе обработки
     result_message = f"Имя файла: {file_name}\nМетод обработки: {selected_method}"
     messagebox.showinfo("Информация", result_message)
+    test_print(file_name, selected_method)
+
+def test_print(file_name, selected_method):
+    print(file_name, selected_method)
+
 
 # Создание основного окна
 root = tk.Tk()
@@ -42,7 +47,7 @@ combo_methods = ttk.Combobox(
 combo_methods.pack(side=tk.LEFT, padx=5)
 
 # Кнопка для запуска программы Pusk
-btn_run = tk.Button(root, text="Запуск Pusk", command=Pusk)
+btn_run = tk.Button(root, text="Запуск", command=Pusk)
 btn_run.pack(pady=20)
 
 # Запуск интерфейса
